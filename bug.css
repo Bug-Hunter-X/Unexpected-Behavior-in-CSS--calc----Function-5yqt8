@@ -1,0 +1,27 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, there's a common error related to spacing and operator precedence within the `calc()` function. For example, the following code may not produce the expected result:
+
+```css
+.element { width: calc(200px + 10%); }
+```
+
+The issue lies in unexpected whitespace around the `+` operator.  CSS is often quite strict with spacing within the `calc()` function.  In this case, it might be interpreted incorrectly. To fix this, remove unnecessary whitespace around the operators:
+
+```css
+.element { width: calc(200px+10%); }
+```
+
+Another issue might involve the order of operations. `calc()` follows standard mathematical rules (PEMDAS/BODMAS), so parentheses are crucial for overriding this order. For example:
+
+```css
+.element { width: calc(100px + 50% * 2); }
+}
+```
+
+Here, the multiplication will happen before addition. If the intention is to add 100px and 50% * 2, parentheses should be added:
+
+```css
+.element { width: calc(100px + (50% * 2)); }
+}
+```
+
+Incorrect unit usage also leads to calculation errors. Make sure units are consistent and correctly applied to values within the calculation.
