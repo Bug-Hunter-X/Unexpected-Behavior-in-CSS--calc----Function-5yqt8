@@ -1,0 +1,19 @@
+The corrected CSS code addresses the spacing and precedence issues within the `calc()` function:
+
+```css
+/* Correct usage of calc() */
+.element {
+  width: calc(200px + 10%); /* Correct: No extra spaces */
+  height: calc(100px + (50% * 2)); /* Correct: Parentheses for precedence */
+  margin: calc(50% - 20px); /* Correct: consistent units*/
+}
+
+/* Incorrect usage of calc() */
+.element-incorrect {
+  width: calc( 200px + 10% ); /* Incorrect: Extra spaces */
+  height: calc(100px + 50% * 2); /* Incorrect: Order of operation not properly defined */
+  margin: calc(50% - 20em); /* Incorrect: Inconsistent units */
+}
+```
+
+Remember to always double-check your spacing, use parentheses for complex expressions, and maintain unit consistency within your `calc()` functions to prevent unexpected behavior.
